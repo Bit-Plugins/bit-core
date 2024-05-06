@@ -1,13 +1,5 @@
-# Example Plugin
-An example plugin for Bit
+# Bit Core
+This repo was created to allow users to view all code exclusively within Bit Core. This also allows us to make changes to Bit Core without updating the main Bit repository.
 
-## Folder Structure
-Bit Plugins follow the following folder structure
-- Folder-Name
- - commands
-  - command.js
- - events
-  - event.js
- - plugin.json
-
-Please see the plugin.json file for a list of support values in the current Bit version.
+# How to install
+An install guide has not been created for this plugin as it is automatically added as part of Bit.
