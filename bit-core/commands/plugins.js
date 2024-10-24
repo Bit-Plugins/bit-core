@@ -9,7 +9,7 @@ module.exports = {
     cooldown: 5,
     // Sets if the command can be used with the bot as a user-installed app or a guild-installed app.
     integration_types: {
-        user: false,
+        user: true,
         guild: true,
     },
 
@@ -46,14 +46,17 @@ module.exports = {
             if(pluginPath && plugins) {
                 for(const folder of plugins) {
                     const pluginInfo = require("./../../"+folder+"/plugin.json")
-                    pluginList.push({
-                        'name': pluginInfo.name,
-                        'developer': pluginInfo.developer,
-                        'version': pluginInfo.version,
-                        'support': pluginInfo.support,
-                        'hasEvents': pluginInfo.events,
-                        'hasCommands': pluginInfo.commands
-                    })
+                    if(pluginInfo.list_in_plugins_command === true) {
+                        pluginList.push({
+                            'name': pluginInfo.name,
+                            'developer': pluginInfo.developer,
+                            'version': pluginInfo.version,
+                            'support': pluginInfo.support,
+                            'hasEvents': pluginInfo.events,
+                            'hasCommands': pluginInfo.commands
+                        })
+                    }
+                    
                     pluginNum += 1;
                 }
     
