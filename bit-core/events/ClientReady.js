@@ -8,7 +8,7 @@ module.exports = {
 	once: true,
 	execute(client) {
 		var lan = language;
-        const locale = require('../../../locale/'+lan+'.json')
+    const locale = require('../../../locale/'+lan+'.json')
 		var status_activity_type = ActivityType.Playing
 		var status_activity_name = "string"
 		var status_activity_state = "string"
