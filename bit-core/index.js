@@ -21,8 +21,22 @@ module.exports = {
     },
 
     check_for_guild: function check_for_guild(client, guild_id) {
-        if(client.guilds.cache.get(guild_id)) {
+        if(client.guilds.fetch(guild_id)) {
             return true;
+        } else {
+            return false;
+        }
+    },
+
+    check_for_member: function check_for_member(client, guild_id, member_id) {
+        if(this.check_for_guild(client, guild_id)) {
+            if(client.guilds.fetch(guild_id).members.fetch(member_id)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     },
 
