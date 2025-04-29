@@ -2,13 +2,14 @@ const { Events, ActivityType } = require('discord.js');
 const { bit_updates, bit_version } = require('../../../configs/bit-core/config.json');
 const { embed_colours, bot_ids, activities, language, dev_mode } = require('../../../config.json');
 const core = require("bit/core");
+const plugins = require("bit/plugins");
 
 module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	execute(client) {
 		var lan = language;
-    const locale = require('../../../locale/'+lan+'.json')
+        const locale = require('../../../locale/'+lan+'.json')
 		var status_activity_type = ActivityType.Playing
 		var status_activity_name = "string"
 		var status_activity_state = "string"
