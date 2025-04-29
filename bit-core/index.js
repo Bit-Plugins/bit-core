@@ -40,6 +40,18 @@ module.exports = {
         }
     },
 
+    check_for_channel: function check_for_channel(client, guild_id, channel_id) {
+        if(this.check_for_guild(client, guild_id)) {
+            if(client.guilds.fetch(guild_id).channels.fetch(channel_id)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+
     add_intent: function add_intent(intent) {
         if(!intent) {
             this.log(0, "Bit: Core", true, "Intents not defined!")
