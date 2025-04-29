@@ -20,6 +20,12 @@ module.exports = {
         this.log(0, "Bit Core", true, "Successfully Loaded!")
     },
 
+    check_for_guild: function check_for_guild(client, guild_id) {
+        if(client.guilds.cache.get(guild_id)) {
+            return true;
+        }
+    },
+
     add_intent: function add_intent(intent) {
         if(!intent) {
             this.log(0, "Bit: Core", true, "Intents not defined!")
